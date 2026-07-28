@@ -13242,7 +13242,16 @@ body[data-locale="zh"] .cutkit-scroll-title h3 {
 
 /* Scale the email against the available card width, including narrow desktop previews. */
 .primary-contact .email-copy strong {
-  font-size: clamp(20px, 2.6vw, 34px);
+  display: block;
+  font-size: clamp(16px, 1.8vw, 28px);
+  letter-spacing: -0.025em;
   max-width: 100%;
+  overflow: hidden;
+  text-overflow: clip;
   white-space: nowrap;
+}
+
+.primary-contact .email-copy {
+  justify-content: center;
+  width: 100%;
 }
