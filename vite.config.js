@@ -9,6 +9,7 @@ export default defineConfig({
         goldbit: resolve(import.meta.dirname, 'goldbit-case.html'),
         ucbitex: resolve(import.meta.dirname, 'ucbitex-case.html'),
         bitview: resolve(import.meta.dirname, 'bitview-case.html'),
+        posters: resolve(import.meta.dirname, 'visual-poster-case.html'),
       },
     },
   },
