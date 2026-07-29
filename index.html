@@ -616,14 +616,19 @@
         window.addEventListener("resize", syncRobotMode);
       }
     </script>
-    <script>
+    <script type="module">
+      import goldbitSelectedUrl from './work/figma-2026/goldbit2-selected.png';
+      import ucbitexSelectedUrl from './work/figma-2026/ucbitex-selected.png';
+      import posterSelectedUrl from './work/poster-design/poster-15.jpg';
+      import bitviewSelectedUrl from './work/figma-2026/bitview-selected.png';
+
       // Keep the reference site's layout and behaviors, replacing only portfolio content.
       (() => {
         const projects = [
-          { image: './work/figma-2026/goldbit2-selected.png', name: 'Goldbit', zhName: 'Goldbit 交易所', category: 'Product system', zhCategory: '双端交易体验', en: 'Web / App trading, asset management and a focused digital finance system.', zh: '网页端与移动端交易、资产管理和数字金融产品系统。', tags: ['Product', 'Web / App', 'Exchange'] },
-          { image: './work/figma-2026/ucbitex-selected.png', name: 'UcbitEX', zhName: 'UcbitEX 交易所', category: 'Exchange system', zhCategory: '加密交易平台', en: 'Core exchange screens, responsive interfaces and a consistent visual language.', zh: '核心交易页面、响应式界面与一致的视觉语言。', tags: ['System', 'Trading', 'Responsive'] },
-          { image: './work/poster-design/poster-15.jpg', name: 'Visual Poster Design', zhName: '视觉海报设计', category: 'Visual communication', zhCategory: '视觉传播设计', en: 'Campaign posters and social visuals shaped through typography, composition, and brand atmosphere.', zh: '以字体、构图与品牌氛围，打造活动海报和社交媒体视觉。', tags: ['Poster', 'Campaign', 'Social'] },
-          { image: './work/figma-2026/bitview-selected.png', name: 'Bitview', zhName: 'Bitview 铭文平台', category: 'Web3 intelligence', zhCategory: 'Web3 信息服务', en: 'Inscription trends, data visualization and decision support for Web3 users.', zh: '铭文动态、数据可视化和 Web3 用户决策支持。', tags: ['Ordinals', 'Data', 'Web / H5'] },
+          { image: goldbitSelectedUrl, name: 'Goldbit', zhName: 'Goldbit 交易所', category: 'Product system', zhCategory: '双端交易体验', en: 'Web / App trading, asset management and a focused digital finance system.', zh: '网页端与移动端交易、资产管理和数字金融产品系统。', tags: ['Product', 'Web / App', 'Exchange'] },
+          { image: ucbitexSelectedUrl, name: 'UcbitEX', zhName: 'UcbitEX 交易所', category: 'Exchange system', zhCategory: '加密交易平台', en: 'Core exchange screens, responsive interfaces and a consistent visual language.', zh: '核心交易页面、响应式界面与一致的视觉语言。', tags: ['System', 'Trading', 'Responsive'] },
+          { image: posterSelectedUrl, name: 'Visual Poster Design', zhName: '视觉海报设计', category: 'Visual communication', zhCategory: '视觉传播设计', en: 'Campaign posters and social visuals shaped through typography, composition, and brand atmosphere.', zh: '以字体、构图与品牌氛围，打造活动海报和社交媒体视觉。', tags: ['Poster', 'Campaign', 'Social'] },
+          { image: bitviewSelectedUrl, name: 'Bitview', zhName: 'Bitview 铭文平台', category: 'Web3 intelligence', zhCategory: 'Web3 信息服务', en: 'Inscription trends, data visualization and decision support for Web3 users.', zh: '铭文动态、数据可视化和 Web3 用户决策支持。', tags: ['Ordinals', 'Data', 'Web / H5'] },
         ];
 
         const heroRole = document.querySelector('.hero-role');
@@ -631,19 +636,6 @@
         const heroLines = document.querySelectorAll('.landing-title-line');
         if (heroLines[0]) heroLines[0].textContent = 'Hi there';
         if (heroLines[1]) heroLines[1].textContent = 'I am Lynn';
-
-        document.querySelectorAll('.landing-bg-media, .about-robot-bg, .work-bg-media').forEach((video) => {
-          const source = video.querySelector('source');
-          const localVideo = video.classList.contains('landing-bg-media')
-            ? './work/hero-hi-there.mp4'
-            : video.classList.contains('about-robot-bg')
-              ? './work/about-right.mp4'
-              : './work/search-results-page-pingpong.mp4';
-          if (source && !source.getAttribute('src')?.startsWith(localVideo)) {
-            source.src = localVideo;
-            video.load();
-          }
-        });
 
         const aboutTitle = document.querySelector('.about-intro-feature h2');
         const aboutDescription = document.querySelector('.about-intro-feature > span');
