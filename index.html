@@ -184,6 +184,12 @@
                             <img src="./work/wechat-qr.png" alt="Lynn WeChat QR code" loading="lazy" decoding="async" />
                           </div>
                         </div>
+                        <div class="wechat-hover-card telegram-hover-card">
+                          <button class="contact-social-link telegram-trigger" id="copyTelegram" type="button" aria-label="Copy Telegram username @zzl_lynn" title="点击复制 @zzl_lynn"><img src="./work/contact-icons/telegram.svg" alt="" decoding="async" /></button>
+                          <div class="wechat-popover telegram-popover" role="dialog" aria-label="Telegram QR code">
+                            <img src="./work/telegram-qr.png" alt="Lynn Telegram QR code" loading="lazy" decoding="async" />
+                          </div>
+                        </div>
                       </div>
                     </article>
                   </div>
@@ -319,6 +325,22 @@
           }, 1800);
         } catch (error) {
           window.location.href = `mailto:${emailAddress}`;
+        }
+      });
+      const copyTelegram = document.getElementById("copyTelegram");
+      const telegramUsername = "@zzl_lynn";
+      copyTelegram?.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(telegramUsername);
+          copyTelegram.classList.add("copied");
+          copyTelegram.title = `已复制 ${telegramUsername}`;
+          window.clearTimeout(copyTelegram.copyTimer);
+          copyTelegram.copyTimer = window.setTimeout(() => {
+            copyTelegram.classList.remove("copied");
+            copyTelegram.title = `点击复制 ${telegramUsername}`;
+          }, 1800);
+        } catch (error) {
+          window.prompt("复制 Telegram 用户名", telegramUsername);
         }
       });
       const initDotField = (container) => {

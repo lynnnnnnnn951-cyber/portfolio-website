@@ -4531,6 +4531,30 @@ button.contact-card {
   width: 100%;
 }
 
+.telegram-popover {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+
+.telegram-popover img {
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  width: 100%;
+}
+
+.telegram-hover-card:not(:hover) .telegram-popover {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px) scale(0.96);
+}
+
+.telegram-trigger.copied {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.48);
+}
+
 .case-page {
   background: #000;
   color: #fff;
@@ -12852,9 +12876,9 @@ body[data-locale="zh"] .cutkit-scroll-title h3 {
 
   .about-section .about-robot-bg {
     animation-iteration-count: 1;
-    left: 0;
-    object-position: 70% center;
-    right: auto;
+    left: auto;
+    object-position: right center;
+    right: 0;
     transform: none;
     transform-origin: center center;
     max-width: none;
@@ -13464,4 +13488,13 @@ body[data-locale="zh"] .cutkit-scroll-title h3 {
 .primary-contact .email-copy {
   justify-content: center;
   width: 100%;
+}
+
+@media (max-width: 700px) {
+  .about-section .about-robot-bg {
+    left: auto !important;
+    object-position: right center !important;
+    right: 0 !important;
+    transform: none !important;
+  }
 }
