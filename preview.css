@@ -178,6 +178,11 @@
 @media (max-width: 700px) {
   .poster-case-nav { padding: 18px 16px; }
   .poster-case-nav > span { display: none; }
+  .poster-case-page img { border-radius: 8px !important; }
+  .poster-case-page figure,
+  .poster-hero-card,
+  .poster-column figure,
+  .poster-social-grid figure { border-radius: 8px; }
   .poster-case-hero { padding: 120px 18px 60px; }
   .poster-hero-copy h1 { font-size: clamp(64px, 22vw, 94px); }
   .poster-hero-stage { min-height: 500px; margin-top: 50px; }
